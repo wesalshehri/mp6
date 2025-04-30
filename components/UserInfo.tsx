@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type UserInfoProps = {
     user: {
         login: string;
@@ -21,12 +23,11 @@ export default function UserInfo({ user }: UserInfoProps) {
             <p className="text-gray-600 text-sm">Username: {user.login}</p>
             <p className="text-gray-600 text-sm">Email: {user.email || 'Not public'}</p>
 
-            <a
-                href="/"
-                className="mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-            >
-                Sign out
-            </a>
+            
+            <Link href="/" className="mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+              Sign out
+            </Link>
+
         </div>
     );
 }
