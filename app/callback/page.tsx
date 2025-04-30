@@ -4,8 +4,16 @@ import { useEffect, useState } from 'react';
 import UserInfo from '@/components/UserInfo';
 import { useRouter } from 'next/navigation';
 
+type GitHubUser = {
+  login: string;
+  name?: string;
+  email?: string;
+  avatar_url: string;
+};
+
+
 export default function CallbackPage() {
-    const [user, setUser] = useState<any>(null);
+    const [user, setUser] = useState<GitHubUser | null>(null);
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
 
